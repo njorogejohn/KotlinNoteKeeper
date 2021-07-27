@@ -34,6 +34,11 @@ class AddNoteFragment : Fragment() {
 
         notePosition = args.notePosition
 
+        if (notePosition == -1){
+            DataManager.notes.add(NoteInfo())
+            notePosition = DataManager.notes.lastIndex
+        }
+
     }
 
     private fun displayNote() {

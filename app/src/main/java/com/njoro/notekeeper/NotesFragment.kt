@@ -39,7 +39,7 @@ class NotesFragment : Fragment() {
             findNavController().navigate(R.id.action_NotesFragment_to_AddNoteFragment)
         }
 
-        binding.listNotes.adapter = ArrayAdapter(
+        binding.listNotes.adapter = ArrayAdapter<NoteInfo>(
             mContext,
             android.R.layout.simple_list_item_1,
             DataManager.notes
@@ -54,6 +54,11 @@ class NotesFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (binding.listNotes.adapter as ArrayAdapter<*>).notifyDataSetChanged()
     }
 
     override fun onDestroyView() {

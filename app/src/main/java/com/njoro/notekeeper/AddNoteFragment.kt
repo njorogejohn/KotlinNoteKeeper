@@ -108,6 +108,19 @@ class AddNoteFragment : Fragment() {
         mContext = context
     }
 
+    override fun onPause() {
+        super.onPause()
+        saveNote()
+    }
+
+    private fun saveNote() {
+        val note = DataManager.notes[notePosition]
+
+        note.title = binding.textNoteTitle.text.toString()
+        note.body = binding.textNoteText.text.toString()
+        note.course = binding.spinnerCourses.selectedItem as CourseInfo
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

@@ -4,7 +4,9 @@
     tools:context="com.njoro.notekeeper.MainActivity">
     <item
         android:id="@+id/action_next"
-        android:title="@string/next" />
+        android:icon="@drawable/ic_forward_white_24"
+        android:title="@string/next"
+        app:showAsAction="ifRoom|withText" />
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

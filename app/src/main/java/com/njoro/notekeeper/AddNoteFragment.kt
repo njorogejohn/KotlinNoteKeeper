@@ -73,6 +73,16 @@ class AddNoteFragment : Fragment() {
         inflater.inflate(R.menu.menu_main, menu)
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu) {
+
+        if (notePosition >= DataManager.notes.lastIndex){
+            val menuItem = menu.findItem(R.id.action_next)
+            menuItem.setIcon(R.drawable.ic_baseline_block_24)
+            menuItem.isEnabled = false
+        }
+        super.onPrepareOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -90,6 +100,7 @@ class AddNoteFragment : Fragment() {
     private fun moveNext() {
         ++notePosition
         displayNote()
+        activity?.invalidateOptionsMenu()
     }
 
     override fun onAttach(context: Context) {

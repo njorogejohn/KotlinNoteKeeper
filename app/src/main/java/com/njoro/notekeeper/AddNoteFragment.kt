@@ -32,7 +32,7 @@ class AddNoteFragment : Fragment() {
             DataManager.courses.values.toMutableList())
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-        notePosition = args.notePosition
+        notePosition = savedInstanceState?.getInt(EXTRA_NOTE_POSITION, POSITION_NOT_SET) ?: args.notePosition
 
         if (notePosition == -1){
             DataManager.notes.add(NoteInfo())
@@ -106,6 +106,11 @@ class AddNoteFragment : Fragment() {
         ++notePosition
         displayNote()
         activity?.invalidateOptionsMenu()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(EXTRA_NOTE_POSITION, notePosition)
     }
 
     override fun onAttach(context: Context) {

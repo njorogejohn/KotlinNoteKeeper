@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">NoteKeeper</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="add_note_fragment_label" translatable="false">Add Note Fragment</string>
+    <string name="notes_fragment_label">Notes Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">1</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="your_note_title_goes_here">Your Note Title Goes Here…</string>
+    <string name="write_your_note_here">Write your note here…</string>
+    <string name="create_new_note">Create New Note</string>
+</resources>

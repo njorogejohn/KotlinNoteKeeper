@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.njoro.notekeeper.databinding.FragmentNotesBinding
 
 /**
@@ -39,16 +39,9 @@ class NotesFragment : Fragment() {
             findNavController().navigate(R.id.action_NotesFragment_to_AddNoteFragment)
         }
 
-        binding.listNotes.adapter = ArrayAdapter<NoteInfo>(
-            mContext,
-            android.R.layout.simple_list_item_1,
-            DataManager.notes
-        )
+        binding.recyclerviewNotes.layoutManager = LinearLayoutManager(mContext)
 
-        binding.listNotes.setOnItemClickListener{ parent,view, position,id ->
-            val action = NotesFragmentDirections.actionNotesFragmentToAddNoteFragment(position)
-            findNavController().navigate(action)
-        }
+        binding.recyclerviewNotes.adapter = NoteAdapter(mContext,this, DataManager.notes)
     }
 
     override fun onAttach(context: Context) {
@@ -58,7 +51,7 @@ class NotesFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        (binding.listNotes.adapter as ArrayAdapter<*>).notifyDataSetChanged()
+        binding.recyclerviewNotes.adapter?.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {

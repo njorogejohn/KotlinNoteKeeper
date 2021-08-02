@@ -21,6 +21,12 @@ object DataManager {
 
         note = NoteInfo(courses["java_core"]!!, "Java Core Tip","For Java to run you need a runtime environment. Correct?")
         notes.add(note)
+
+        note = NoteInfo(courses["android_async"], "Retrofit", "Used for async network calls")
+        notes.add(note)
+
+        note = NoteInfo(courses["android_intents"],"Intents with NavGraph","Check out the passing of data between fragments when using intents")
+        notes.add(note)
     }
 
     private fun initializeCourses(){

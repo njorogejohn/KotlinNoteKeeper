@@ -13,4 +13,19 @@
     <string name="write_your_note_here">Write your note here…</string>
     <string name="create_new_note">Create New Note</string>
     <string name="note_image">Note Image</string>
+    <string name="title_activity_notes">NotesActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="notes">Notes</string>
+    <string name="courses">Courses</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="share">Share</string>
+    <string name="send">Send</string>
 </resources>
